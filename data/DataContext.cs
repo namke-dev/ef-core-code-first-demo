@@ -15,7 +15,7 @@ namespace SuperHeroAPI.data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=.\\NAMKE_DEV;Database=superherodb;Trusted_Connection=true;TrustServerCertificate=true;");
+            optionsBuilder.UseSqlServer("Server=.;Database=superherodb;Trusted_Connection=True;Encrypt=False;");
         }
 
         public DbSet<SuperHero> SuperHeroes { get; set; }
