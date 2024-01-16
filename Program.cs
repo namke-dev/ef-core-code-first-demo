@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SuperHeroAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ISuperHeroService, SuperHeroService>();
+builder.Services.AddDbContext<DbContext>();
 
 var app = builder.Build();
 
