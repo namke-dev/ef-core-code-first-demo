@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SuperHeroAPI.Models;
 
@@ -67,6 +63,16 @@ namespace SuperHeroAPI.Controllers
             targetHero.Place = superHero.Place;
 
             return Ok(targetHero);
+        }
+
+        [HttpDelete("id")]
+        public async Task<IActionResult> DeleteSuperHero(int id)
+        {
+            var hero = superHeroes.Find(x => x.Id == id);
+            if (hero is null)
+                return NotFound("This hero doesnot exist");
+            superHeroes.Remove(hero);
+            return Ok(hero);
         }
     }
 }
