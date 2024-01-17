@@ -10,7 +10,7 @@ using SuperHeroAPI.data;
 
 namespace SuperHeroAPI.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(SuperHeroesContext))]
     [Migration("20240116210422_InitialCreate")]
     partial class InitialCreate
     {

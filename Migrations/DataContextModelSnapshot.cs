@@ -9,7 +9,7 @@ using SuperHeroAPI.data;
 
 namespace SuperHeroAPI.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(SuperHeroesContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

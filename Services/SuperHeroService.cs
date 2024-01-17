@@ -4,9 +4,9 @@ using SuperHeroAPI.Models;
 
 namespace SuperHeroAPI.Services
 {
-    public class SuperHeroService(DataContext context) : ISuperHeroService
+    public class SuperHeroService(SuperHeroesContext context) : ISuperHeroService
     {
-        private readonly DataContext _context = context;
+        private readonly SuperHeroesContext _context = context;
 
         public async Task<List<SuperHero>?> AddSuperHero(SuperHero superHero)
         {
