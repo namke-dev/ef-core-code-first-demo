@@ -3,12 +3,12 @@ using SuperHeroAPI.Models;
 
 namespace SuperHeroAPI.data
 {
-    public class DataContext : DbContext
+    public class SuperHeroesContext : DbContext
     {
-        public DataContext()
+        public SuperHeroesContext()
         {
         }
-        protected DataContext(DbContextOptions<DataContext> options) : base(options)
+        protected SuperHeroesContext(DbContextOptions<SuperHeroesContext> options) : base(options)
         {
         }
 
