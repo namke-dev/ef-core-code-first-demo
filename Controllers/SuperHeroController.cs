@@ -13,14 +13,14 @@ namespace SuperHeroAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllSuperHero()
         {
-            var result = _superHeroService.GetAllSuperHero();
+            var result = await _superHeroService.GetAllSuperHero();
             return Ok(result);
         }
 
         [HttpGet("id")]
         public async Task<IActionResult> GetSuperHero(int id)
         {
-            var result = _superHeroService.GetSuperHero(id);
+            var result = await _superHeroService.GetSuperHero(id);
             if (result is null)
                 return NotFound("This hero doesnot exist");
             return Ok(result);
@@ -29,7 +29,7 @@ namespace SuperHeroAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddSuperHero(SuperHero superHero)
         {
-            var result = _superHeroService.AddSuperHero(superHero);
+            var result = await _superHeroService.AddSuperHero(superHero);
             return Ok(result);
         }
 
@@ -37,7 +37,7 @@ namespace SuperHeroAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateSuperHero(int id, SuperHero superHero)
         {
-            var result = _superHeroService.UpdateSuperHero(id, superHero);
+            var result = await _superHeroService.UpdateSuperHero(id, superHero);
             if (result is null)
             {
                 return NotFound("This hero doesnot exist");
@@ -48,7 +48,7 @@ namespace SuperHeroAPI.Controllers
         [HttpDelete("id")]
         public async Task<IActionResult> DeleteSuperHero(int id)
         {
-            var result = _superHeroService.DeleteSuperHero(id);
+            var result = await _superHeroService.DeleteSuperHero(id);
             if (result is null)
                 return NotFound("This hero doesnot exist");
             return Ok(result);
